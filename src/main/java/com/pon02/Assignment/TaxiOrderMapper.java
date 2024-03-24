@@ -4,6 +4,7 @@ import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Select;
 
 import java.util.List;
+import java.util.Optional;
 
 @Mapper
 public interface TaxiOrderMapper {
@@ -20,5 +21,5 @@ public interface TaxiOrderMapper {
     List<StaffSection> findAllStaffSections();
 
     @Select("SELECT * FROM taxi_orders WHERE taxi_company_id = #{taxi_company_id}")
-    List<TaxiOrder> findByTaxiCompany(int taxi_company_id);
+    Optional<TaxiOrder> findOrderByCompanyId(int taxi_company_id);
 }
