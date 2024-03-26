@@ -21,5 +21,5 @@ public interface TaxiOrderMapper {
     List<StaffSection> findAllStaffSections();
 
     @Select("SELECT * FROM taxi_orders WHERE taxi_company_id = #{taxi_company_id}")
-    Optional<TaxiOrder> findOrderByCompanyId(int taxi_company_id);
+    List<TaxiOrder> findOrderByCompanyId(int taxi_company_id);
 }

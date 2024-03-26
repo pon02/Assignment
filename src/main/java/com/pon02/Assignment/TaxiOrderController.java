@@ -27,7 +27,7 @@ public class TaxiOrderController {
         return taxiOrderService.findAllStaffSections();
     }
     @GetMapping("/taxiorder/company")
-    public TaxiOrder getOrderByCompanyId(@RequestParam int taxi_company_id) {
+    public List<TaxiOrder> findOrderByCompanyId(@RequestParam int taxi_company_id) {
         return taxiOrderService.findOrderByCompanyId(taxi_company_id);
     }
 }
