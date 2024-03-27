@@ -31,11 +31,10 @@ public class TaxiOrderService {
 
     public List<TaxiOrder> findOrderByCompanyId(int taxi_company_id) {
         List<TaxiOrder> orders = this.taxiOrderMapper.findOrderByCompanyId(taxi_company_id);
-            if (!orders.isEmpty()) {
-                return orders;
-            } else {
+            if (orders.isEmpty()) {
                 throw new TaxiOrderNotFoundException("No orders found for company id: " + taxi_company_id, null);
-            }
+            };
+            return orders;
     }
 }
 
